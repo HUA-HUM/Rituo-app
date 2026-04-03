@@ -9,15 +9,46 @@ import SwiftUI
 
 @main
 struct rituoApp: App {
+    @StateObject private var authService = AuthService()
+    @StateObject private var onboardingService = OnboardingService()
+
     var body: some Scene {
-        WindowGroup{
-            ContentView()
+        WindowGroup {
+            Group {
+                if authService.isAuthenticated {
+                    if onboardingService.shouldShowOnboarding {
+                        OnboardingView(onboardingService: onboardingService)
+                            .preferredColorScheme(.dark)
+                    } else {
+                        ContentView(authService: authService)
+                    }
+                } else {
+                    AuthView(authService: authService)
+                        .preferredColorScheme(.dark)
+                }
+            }
+            .animation(.easeInOut, value: authService.isAuthenticated)
+            .animation(.easeInOut, value: onboardingService.shouldShowOnboarding)
         }
     }
 }
 
 struct ContentView: View {
-    @StateObject var nfcManager = NFCManager()
+    @ObservedObject var authService: AuthService
+    @StateObject private var nfcManager = NFCManager()
+    @StateObject private var appBlockingManager = AppBlockingManager()
+    @State private var isAppBlockingPresented = false
+
+    private var displayName: String {
+        authService.currentUser?.name ?? "Guest"
+    }
+
+    private var usernameForNFC: String {
+        if let name = authService.currentUser?.name, !name.isEmpty {
+            return name
+        }
+        return authService.currentUser?.id ?? "guest"
+    }
 
     var body: some View {
         TabView {
@@ -27,7 +58,7 @@ struct ContentView: View {
                     .font(.system(size: 60))
                     .foregroundColor(.blue)
 
-                Text("Welcome user123")
+                Text("Welcome \(displayName)")
                     .font(.largeTitle)
                     .bold()
 
@@ -40,8 +71,32 @@ struct ContentView: View {
                     .multilineTextAlignment(.center)
                     .background(Color.gray.opacity(0.1))
                     .cornerRadius(10)
+
+                VStack(spacing: 12) {
+                    Text(appBlockingManager.isShieldingEnabled ? "App blocking is currently on." : "Block distracting apps whenever you need focus time.")
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.secondary)
+
+                    Button("Manage Blocked Apps") {
+                        isAppBlockingPresented = true
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color.orange.opacity(0.1))
+                .cornerRadius(10)
+
+                Button("Sign Out", role: .destructive) {
+                    authService.signOut()
+                }
+                .buttonStyle(.bordered)
             }
             .padding()
+            .sheet(isPresented: $isAppBlockingPresented) {
+                AppBlockingView(manager: appBlockingManager)
+            }
             .tabItem {
                 Label("Home", systemImage: "house")
             }
@@ -76,12 +131,12 @@ struct ContentView: View {
                 Text("Write to Tag")
                     .font(.largeTitle)
                     .bold()
-                
+
                 Text("Data to be written:")
                     .font(.subheadline)
-                
+
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Username: user123")
+                    Text("Username: \(usernameForNFC)")
                     Text("Timestamp: Current Time")
                 }
                 .padding()
@@ -90,7 +145,7 @@ struct ContentView: View {
                 .cornerRadius(10)
 
                 Button("Write Data") {
-                    nfcManager.startWriting(username: "user123")
+                    nfcManager.startWriting(username: usernameForNFC)
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(.green)
