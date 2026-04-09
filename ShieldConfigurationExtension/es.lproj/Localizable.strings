@@ -1,0 +1,11 @@
+"shield.title.app" = "Bloqueado";
+"shield.subtitle.app" = "Presenta tu tarjeta Rituo en la app de Rituo para acceder a %@";
+"shield.title.appCategory" = "Bloqueado";
+"shield.subtitle.appCategory" = "Presenta tu tarjeta Rituo en la app de Rituo para acceder a las apps bloqueadas.";
+"shield.title.website" = "Bloqueado";
+"shield.subtitle.website" = "Presenta tu tarjeta Rituo en la app de Rituo para acceder a %@";
+"shield.title.websiteCategory" = "Bloqueado";
+"shield.subtitle.websiteCategory" = "Presenta tu tarjeta Rituo en la app de Rituo para acceder a los sitios web bloqueados.";
+"shield.button.close" = "Cerrar";
+"shield.app.fallbackName" = "esta app";
+"shield.website.fallbackName" = "este sitio web";

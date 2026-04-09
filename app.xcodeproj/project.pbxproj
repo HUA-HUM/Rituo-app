@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		EAE9BBBA2F737F1900FC5B9E /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE9BBB92F737F1900FC5B9E /* CoreNFC.framework */; };
+		F0A000012F80000100AAA111 /* ShieldConfigurationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F0A000012F80000300AAA111 /* ShieldConfigurationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F0A000012F80000E00AAA111 /* ShieldConfigurationExtension/ShieldConfigurationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A000012F80000F00AAA111 /* ShieldConfigurationExtension/ShieldConfigurationExtension.swift */; };
+		F0A000012F80001000AAA111 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0A000012F80001300AAA111 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,13 +28,38 @@
 			remoteGlobalIDString = EAC5DA872F625BB500ECA455;
 			remoteInfo = app;
 		};
+		F0A000012F80000200AAA111 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAC5DA802F625BB500ECA455 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0A000012F80000700AAA111;
+			remoteInfo = ShieldConfigurationExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F0A000012F80000500AAA111 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F0A000012F80000100AAA111 /* ShieldConfigurationExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EAC5DA882F625BB500ECA455 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC5DA972F625BB600ECA455 /* appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC5DAA12F625BB600ECA455 /* appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE9BBB92F737F1900FC5B9E /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
+		F0A000012F80000300AAA111 /* ShieldConfigurationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShieldConfigurationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0A000012F80000F00AAA111 /* ShieldConfigurationExtension/ShieldConfigurationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldConfigurationExtension/ShieldConfigurationExtension.swift; sourceTree = SOURCE_ROOT; };
+		F0A000012F80001100AAA111 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ShieldConfigurationExtension/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		F0A000012F80001200AAA111 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = ShieldConfigurationExtension/es.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -48,6 +76,11 @@
 		EAC5DAA42F625BB600ECA455 /* appUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = appUITests;
+			sourceTree = "<group>";
+		};
+		F0A000012F80000400AAA111 /* ShieldConfigurationExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ShieldConfigurationExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +108,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0A000012F80000600AAA111 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,10 +122,13 @@
 			isa = PBXGroup;
 			children = (
 				EAC5DA8A2F625BB500ECA455 /* app */,
+				F0A000012F80000400AAA111 /* ShieldConfigurationExtension */,
 				EAC5DA9A2F625BB600ECA455 /* appTests */,
 				EAC5DAA42F625BB600ECA455 /* appUITests */,
 				EAE9BBB82F737F1900FC5B9E /* Frameworks */,
 				EAC5DA892F625BB500ECA455 /* Products */,
+				EAD6CBB42F8801ED00723C2B /* Recovered References */,
+				F0A000012F80001300AAA111 /* Localizable.strings */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,10 +136,19 @@
 			isa = PBXGroup;
 			children = (
 				EAC5DA882F625BB500ECA455 /* app.app */,
+				F0A000012F80000300AAA111 /* ShieldConfigurationExtension.appex */,
 				EAC5DA972F625BB600ECA455 /* appTests.xctest */,
 				EAC5DAA12F625BB600ECA455 /* appUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EAD6CBB42F8801ED00723C2B /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F0A000012F80000F00AAA111 /* ShieldConfigurationExtension/ShieldConfigurationExtension.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		EAE9BBB82F737F1900FC5B9E /* Frameworks */ = {
@@ -117,10 +169,12 @@
 				EAC5DA842F625BB500ECA455 /* Sources */,
 				EAC5DA852F625BB500ECA455 /* Frameworks */,
 				EAC5DA862F625BB500ECA455 /* Resources */,
+				F0A000012F80000500AAA111 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F0A000012F80000A00AAA111 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				EAC5DA8A2F625BB500ECA455 /* app */,
@@ -178,6 +232,25 @@
 			productReference = EAC5DAA12F625BB600ECA455 /* appUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F0A000012F80000700AAA111 /* ShieldConfigurationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0A000012F80000D00AAA111 /* Build configuration list for PBXNativeTarget "ShieldConfigurationExtension" */;
+			buildPhases = (
+				F0A000012F80000900AAA111 /* Sources */,
+				F0A000012F80000600AAA111 /* Frameworks */,
+				F0A000012F80000800AAA111 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShieldConfigurationExtension;
+			packageProductDependencies = (
+			);
+			productName = ShieldConfigurationExtension;
+			productReference = F0A000012F80000300AAA111 /* ShieldConfigurationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,6 +272,9 @@
 						CreatedOnToolsVersion = 26.2;
 						TestTargetID = EAC5DA872F625BB500ECA455;
 					};
+					F0A000012F80000700AAA111 = {
+						CreatedOnToolsVersion = 26.2;
+					};
 				};
 			};
 			buildConfigurationList = EAC5DA832F625BB500ECA455 /* Build configuration list for PBXProject "app" */;
@@ -207,6 +283,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = EAC5DA7F2F625BB500ECA455;
 			minimizedProjectReferenceProxies = 1;
@@ -216,6 +293,7 @@
 			projectRoot = "";
 			targets = (
 				EAC5DA872F625BB500ECA455 /* app */,
+				F0A000012F80000700AAA111 /* ShieldConfigurationExtension */,
 				EAC5DA962F625BB600ECA455 /* appTests */,
 				EAC5DAA02F625BB600ECA455 /* appUITests */,
 			);
@@ -244,6 +322,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0A000012F80000800AAA111 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0A000012F80001000AAA111 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -268,6 +354,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0A000012F80000900AAA111 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0A000012F80000E00AAA111 /* ShieldConfigurationExtension/ShieldConfigurationExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -281,7 +375,24 @@
 			target = EAC5DA872F625BB500ECA455 /* app */;
 			targetProxy = EAC5DAA22F625BB600ECA455 /* PBXContainerItemProxy */;
 		};
+		F0A000012F80000A00AAA111 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0A000012F80000700AAA111 /* ShieldConfigurationExtension */;
+			targetProxy = F0A000012F80000200AAA111 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F0A000012F80001300AAA111 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0A000012F80001100AAA111 /* en */,
+				F0A000012F80001200AAA111 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EAC5DAA92F625BB600ECA455 /* Debug */ = {
@@ -571,6 +682,66 @@
 			};
 			name = Release;
 		};
+		F0A000012F80000B00AAA111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ShieldConfigurationExtension/ShieldConfigurationExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LXWR3JHQ9L;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShieldConfigurationExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.rituo.app.ShieldConfigurationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0A000012F80000C00AAA111 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ShieldConfigurationExtension/ShieldConfigurationExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LXWR3JHQ9L;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShieldConfigurationExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.rituo.app.ShieldConfigurationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -606,6 +777,15 @@
 			buildConfigurations = (
 				EAC5DAB22F625BB600ECA455 /* Debug */,
 				EAC5DAB32F625BB600ECA455 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0A000012F80000D00AAA111 /* Build configuration list for PBXNativeTarget "ShieldConfigurationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0A000012F80000B00AAA111 /* Debug */,
+				F0A000012F80000C00AAA111 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
